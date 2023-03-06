@@ -21,7 +21,7 @@ struct coordenada
 void ioLecturaarchivo(string ionombre);
 int main()
 {
-
+    cout<<BLUE"[+] Leyendo coordenadas..."<<endl;
     ioLecturaarchivo("files/datos.txt");
 
     return 0;
