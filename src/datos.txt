@@ -1,0 +1,11 @@
+CAP,  Geo,      TIPO ARSENAL
+9,    GPS9,      aaabbcd      
+0,    GPS0,      ab
+7,    GPS7,      aaabbct
+5,    GPS5,      bct
+7,    GPS7,      aaabbct
+5,    GPS5,      bct
+5,    GPS5,      bct
+5,    GPS5,      bct
+7,    GPS7,      aaabbct
+1,    GPS1,      bc
