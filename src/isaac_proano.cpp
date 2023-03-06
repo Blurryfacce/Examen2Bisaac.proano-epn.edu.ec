@@ -9,9 +9,22 @@
 #include <windows.h>
 
 using namespace std;
+/*
+    @author Isaac Proanio
+    @date 06 Marzo 2023
 
+    Variables constantes que indican los nombres completos y el numero de cedula.
+*/
 const string IONOMBRE_COMPLETO = {"Isaac Joshua Proano Zambrano"};
 const int IOCEDULA = 175575709;
+const int IOCB = 22;
+const int IOCOORD = 10;
+/*
+    @author Isaac Proanio
+    @date 06 Marzo 2023
+
+    Estructura que contiene los datos que iran en el arbol Binario.
+*/
 struct coordenada
 {
     
@@ -21,6 +34,12 @@ struct coordenada
     coordenada *izq;
 
 };
+/*
+    @author Isaac Proanio
+    @date 06 Marzo 2023
+
+    Prototipo de Arbol Binario.
+*/
 struct nodo
 {
     int dato;
@@ -35,6 +54,12 @@ void ioInsertarNodo(nodo *&, int);
 
 void ioLecturaarchivo(string ionombre);
 void datos();
+/*
+    @author Isaac Proanio
+    @date 06 Marzo 2023
+
+    Funcion principal. 
+*/
 int main()
 {
     cout<<BLUE"[+] Leyendo coordenadas..."<<endl;
@@ -78,6 +103,12 @@ void ioInsertarNodo(nodo *&ioArbol, int n)
 
 
 }
+/*
+    @author Isaac Proanio
+    @date 06 Marzo 2023
+
+    Procedimiento que sirve para leer lo que se encuentra en el archivo de texto que se encuentra en /files/datos.txt. Buscar que dicho archivo exista y posteriormente lea el contenido del archivo para presentarlo en consola. 
+*/
 void ioLecturaarchivo(string ionombre) {
   
     string ioTexto;
@@ -121,11 +152,19 @@ void ioLecturaarchivo(string ionombre) {
     archivo.close();
 
 }
+/*
+    @author Isaac Proanio
+    @date 06 Marzo 2023
+
+    Procedimiento que contiene los datos del autor.
+*/
 void datos()
 {
     cout<<BLUE<<"\n\n[+] Informacion Arbol Binario de capacidad belica Ucraniana "<<endl;
     cout<<GRAY<<"Developer-Nombre: "<<IONOMBRE_COMPLETO<<endl;
     cout<<"Developer-Cedula: "<<IOCEDULA<<endl;
-
+    cout<<"Capacidad Belica: "<<IOCB<<endl;
+    cout<<"Coordenada-Total: "<<IOCOORD<<endl;
+    cout<<"Coordenada-SecCarga: "<<"9"<<" 0"<<" 7"<<" 5"<<" 1";
 
 }
