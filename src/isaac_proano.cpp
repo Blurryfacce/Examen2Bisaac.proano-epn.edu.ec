@@ -19,17 +19,20 @@ struct coordenada
 
 };
 void ioLecturaarchivo(string ionombre);
+void datos();
 int main()
 {
     cout<<BLUE"[+] Leyendo coordenadas..."<<endl;
     ioLecturaarchivo("files/datos.txt");
+    cout<<"\n";
+    datos();
 
     return 0;
 }
 void ioLecturaarchivo(string ionombre) {
   
-    string texto;
-    int num_linea = 0;
+    string ioTexto;
+    int ioNum_linea = 0;
     vector<string> coordenadas_validas;
 
     ifstream archivo(ionombre);
@@ -38,21 +41,21 @@ void ioLecturaarchivo(string ionombre) {
         return;
     }
 
-    while (getline(archivo, texto)) {
-        cout << "Presentando datos: " << (num_linea * 100 / 10) << "%\r";
+    while (getline(archivo, ioTexto)) {
+        cout << "Presentando datos: " << (ioNum_linea * 100 / 10) << "%\r";
         cout.flush();
-        num_linea++;
+        ioNum_linea++;
 
-        size_t pos1 = texto.find(",");
-        size_t pos2 = texto.find(",", pos1 + 1);
-        if (pos1 == string::npos || pos2 == string::npos || pos2 == texto.length() - 1) {
-            cout << "\033[31mError en la línea " << num_linea << ": no es una coordenada válida.\033[0m" << endl;
+        size_t pos1 = ioTexto.find(",");
+        size_t pos2 = ioTexto.find(",", pos1 + 1);
+        if (pos1 == string::npos || pos2 == string::npos || pos2 == ioTexto.length() - 1) {
+            cout << "\033[31mError en la línea " << ioNum_linea << ": no es una coordenada válida.\033[0m" << endl;
             continue;
         }
 
-        string cap = texto.substr(0, pos1);
-        string geo = texto.substr(pos1 + 1, pos2 - pos1 - 1);
-        string tipo_arsenal = texto.substr(pos2 + 1);
+        string cap = ioTexto.substr(0, pos1);
+        string geo = ioTexto.substr(pos1 + 1, pos2 - pos1 - 1);
+        string tipo_arsenal = ioTexto.substr(pos2 + 1);
 
         string coordenada = cap + "," + geo + "," + tipo_arsenal;
         if (find(coordenadas_validas.begin(), coordenadas_validas.end(), coordenada) != coordenadas_validas.end()) {
@@ -62,9 +65,18 @@ void ioLecturaarchivo(string ionombre) {
         coordenadas_validas.push_back(coordenada);
         io_loading();
         cout << "  \033[32m" << cap << ", " << geo << ", " << tipo_arsenal << "\033[0m" << endl;
+       
     }
 
     
     archivo.close();
+
+}
+void datos()
+{
+    cout<<BLUE<<"\n\n[+] Informacion Arbol Binario de capacidad belica Ucraniana "<<endl;
+    cout<<GRAY<<"Developer-Nombre: "<<IONOMBRE_COMPLETO<<endl;
+    cout<<"Developer-Cedula: "<<IOCEDULA<<endl;
+
 
 }
