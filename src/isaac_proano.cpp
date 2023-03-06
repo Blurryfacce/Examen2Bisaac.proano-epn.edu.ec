@@ -14,10 +14,25 @@ const string IONOMBRE_COMPLETO = {"Isaac Joshua Proano Zambrano"};
 const int IOCEDULA = 175575709;
 struct coordenada
 {
-    int capacidadBelica;
-    string geoloc, detalleArs;
+    
+    int ioCapacidadBelica;
+    string ioGeoloc, ioDetalleArs;
+    coordenada *der;
+    coordenada *izq;
 
 };
+struct nodo
+{
+    int dato;
+    nodo *der;
+    nodo *izq;
+};
+
+nodo *ioCrear_Nodo(int);
+nodo *ioArbol = NULL;
+void ioInsertarNodo(nodo *&, int);
+
+
 void ioLecturaarchivo(string ionombre);
 void datos();
 int main()
@@ -28,6 +43,40 @@ int main()
     datos();
 
     return 0;
+}
+nodo *ioCrearNodo(int n)
+{
+    nodo *nuevo_nodo = new nodo();
+
+    nuevo_nodo->dato = n;
+    nuevo_nodo->der = NULL;
+    nuevo_nodo->izq = NULL;
+
+    return nuevo_nodo;
+}
+void ioInsertarNodo(nodo *&ioArbol, int n)
+{
+    if (ioArbol == NULL)
+    {
+        nodo *nuevo_nodo = ioCrearNodo(n);
+        ioArbol = nuevo_nodo;
+    }
+    else
+    {
+        int valorRaiz = ioArbol->dato;
+        if (n<valorRaiz)
+        {
+            ioInsertarNodo(ioArbol->izq,n);
+        }
+        else{
+            ioInsertarNodo(ioArbol->der,n);
+        }
+        
+    }
+
+    
+
+
 }
 void ioLecturaarchivo(string ionombre) {
   
