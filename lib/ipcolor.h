@@ -1,21 +1,18 @@
-#include <stdio.h>
-//===Color font ===/
-#define COLOR_BLACK   "\x1B[30m"
-#define COLOR_RED     "\x1b[31m"
-#define COLOR_GREEN   "\x1b[32m"
-#define COLOR_YELLOW  "\x1b[33m"
-#define COLOR_BLUE    "\x1b[34m"
-#define COLOR_MAGENTA "\x1b[35m"
-#define COLOR_CYAN    "\x1b[36m"
-#define COLOR_WHITE   "\x1B[37m"
-#define COLOR_ORANGE  "\x1B[38;2;255;128;0m"
-#define COLOR_ROSE    "\x1B[38;2;255;151;203m"
-#define COLOR_LBLUE   "\x1B[38;2;53;149;240m"
-#define COLOR_LGREEN  "\x1B[38;2;17;245;120m"
-#define COLOR_GRAY    "\x1B[38;2;176;174;174m"
-#define COLOR_RESET   "\x1b[0m"
-
-//===Color background ===/
+#define BLACK   "\x1B[30m"
+#define RED     "\x1b[31m"
+#define GREEN   "\x1b[32m"
+#define YELLOW  "\x1b[33m"
+#define BLUE    "\x1b[34m"
+#define MAGENTA "\x1b[35m"
+#define CYAN    "\x1b[36m"
+#define WHITE   "\x1B[37m"
+#define ORANGE  "\x1B[38;2;255;128;0m"
+#define ROSE    "\x1B[38;2;255;151;203m"
+#define LBLUE   "\x1B[38;2;53;149;240m"
+#define LGREEN  "\x1B[38;2;17;245;120m"
+#define GRAY    "\x1B[38;2;176;174;174m"
+#define RESET   "\x1b[0m"
+//===Color background code===/
 #define BG_BLACK   "\x1B[40m"
 #define BG_RED     "\x1B[41m"
 #define BG_GREEN   "\x1B[42m"
@@ -29,28 +26,3 @@
 #define BG_LGREEN  "\x1B[48;2;17;245;120m"
 #define BG_GRAY    "\x1B[48;2;176;174;174m"
 #define BG_ROSE    "\x1B[48;2;255;151;203m"
-
-//Colores de texto
-#define fnColorBlack 30
-#define fnColorRed 31
-#define fnColorGreen 32
-#define fnColorYellow 33
-#define fnColorBlue 34
-#define fnColorMagenta 35
-#define fnColorCyan 36
-#define fnColorWhite 37
-//colores de fondo
-#define fnBgBlack 40
-#define fnBgRed 41
-#define fnBgGreen 42
-#define fnBgYellow 43
-#define fnBgBlue 44
-#define fnBgMagenta 45
-#define fnBgCyan 46
-#define fnBgWhite 47
-
-
-void setColor(int color, int BG_color){
-        //El primer valor es del color de texto y el segundo del color del fondo
-        printf("%c[%d;%d;%dm", 0x1B, 1,color,BG_color);
-}
